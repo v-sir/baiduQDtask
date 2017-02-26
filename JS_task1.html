@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>百度前端JS任务一</title>
+</head>
+<body>
+<h3>方法一：</h3>
+<h4>通过onclick直接触发</h4>
+<label>请输入北京今天空气质量：<input id="aqi-input" type="text"></label>
+<button id="button">确认填写</button>
+<div>您输入的值是：<span id="aqi-display">尚无录入</span></div>
+<h3>方法二：</h3>
+<h4>通过监听鼠标事件触发</h4>
+<label>请输入北京今天空气质量：<input id="aqi-input2" type="text"></label>
+<button id="button2">确认填写</button>
+<div>您输入的值是：<span id="aqi-display2">尚无录入</span></div>
+
+<script type="text/javascript">
+
+    (function() {
+        /*
+         在注释下方写下代码
+         给按钮button绑定一个点击事件
+         在事件处理函数中
+         获取aqi-input输入的值，并显示在aqi-display中
+         */
+        //方式一:通过ID定位按钮绑定 onclick触发改变内容方法
+        document.getElementById("button").onclick=function(){
+            var Air=document.getElementById("aqi-input").value;
+            document.getElementById("aqi-display").innerHTML=Air;
+        }
+        //方式二:通过ID定位按钮，通过监听鼠标事件触发
+        document.getElementById("button2").addEventListener("click",change);
+        function  change(){
+           var Air2 =document.getElementById("aqi-input2").value;
+            document.getElementById("aqi-display2").innerHTML=Air2;
+        }
+
+    })();
+
+</script>
+
+</body>
+</html>
