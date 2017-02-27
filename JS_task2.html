@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>百度前端JS任务二</title>
+</head>
+<body>
+<h3>污染城市列表</h3>
+<ul id="aqi-list">
+    <!--
+        <li>第一名：福州（样例），10</li>
+          <li>第二名：福州（样例），10</li> -->
+</ul>
+
+<script type="text/javascript">
+
+    var aqiData = [
+        ["北京", 90],
+        ["上海", 50],
+        ["福州", 10],
+        ["广州", 50],
+        ["成都", 90],
+        ["西安", 100]
+    ];
+
+    (function () {
+
+
+        /*
+         在注释下方编写代码
+         遍历读取aqiData中各个城市的数据
+         将空气质量指数大于60的城市显示到aqi-list的列表中
+         */
+        //本题虽然已知数组的大小但是实际的网页中对于数据的大小是个未知数需要我们计算
+        DataTotal=aqiData.length;
+        var ranking=["第一名：","第二名:","第三名："];
+        var tmp="";
+        var j=0;
+        for(i=0;i<DataTotal;i++){
+            if(aqiData[i][1]>60){
+            tmp+="<li>"+ ranking[j++]+aqiData[i]+"</li>";
+            document.getElementById("aqi-list").innerHTML=tmp;
+
+
+            }
+
+         }
+
+    })();
+
+</script>
+</body>
+</html>
